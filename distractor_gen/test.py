@@ -56,10 +56,10 @@ def main(args):
     # Choose device
     device = get_default_device()
 
-    with open(args.questions_path, 'r') as f:
+    with open(args.question_path, 'r') as f:
         all_gen_questions = [a.rstrip() for a in f.readlines()]
 
-    with open(args.contexts_path, 'r') as f:
+    with open(args.context_path, 'r') as f:
         all_contexts = [a.rstrip() for a in f.readlines()]
 
     test_data = zip(all_contexts, all_gen_questions)

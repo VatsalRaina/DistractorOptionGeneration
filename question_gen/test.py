@@ -93,8 +93,8 @@ def main(args):
         print(count)
 
         all_generated_ids = model.generate(
-            input_ids=inp_id,
-            attention_mask=inp_att_msk,
+            input_ids=inp_id.to(device),
+            attention_mask=inp_att_msk.to(device),
             num_beams=args.num_beams, # Less variability
             # do_sample=True,
             # top_k=50,           # This parameter and the one below create more question variability but reduced quality of questions

@@ -73,9 +73,13 @@ def clean(test_data):
     for ex in test_data:
         question, context, options = ex['question'], ex['context'], ex['options']
         if len(options) !=4:
-            last_option = options[-1]
-            while len(options) < 4:
-                options.append(last_option)
+            if len(options) > 4:
+                while len(options) > 4:
+                    _ = options.pop()
+            else:
+                last_option = options[-1]
+                while len(options) < 4:
+                    options.append(last_option)
         curr_point = {'question': question, 'context': context, 'options':options, 'label':0}
         clean_data.append(curr_point)
     return clean_data

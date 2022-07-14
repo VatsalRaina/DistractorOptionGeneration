@@ -62,7 +62,7 @@ def main(args):
     with open(args.context_path, 'r') as f:
         all_contexts = [a.rstrip() for a in f.readlines()]
 
-    test_data = zip(all_contexts, all_gen_questions)
+    test_data = list(zip(all_contexts, all_gen_questions))
 
     tokenizer = T5Tokenizer.from_pretrained("t5-base")
 

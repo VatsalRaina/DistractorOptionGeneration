@@ -73,7 +73,7 @@ def main(args):
     all_generated_questions = []
     all_contexts = []
 
-    NUM = 1500
+    NUM = 1542
 
     if args.part_num == 0:
         start = 0
